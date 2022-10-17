@@ -1,17 +1,12 @@
 # Задайте список из N элементов, заполненных числами из промежутка [-N, N].
 # Найдите произведение элементов на указанных позициях. Позиции вводятся через пробел в одной строкой.
 
-from random import randint
-
-n = int(input('Введите число: --> '))
 numbers = []
-for i in range(n):
-    numbers.append(randint (-n, n))
-print(numbers)
-
-x = int(input('Индекс первого элемента: --> '))
-y = int(input('Индекс второго элемента: --> '))
-
-for i in range(len(numbers)):
-    res_mult = numbers[x - 1] * numbers[y - 1]
+n = int(input('Введите число: --> '))
+numbers = [i for i in range(-n, n)]
+print(f'Список элементов: {numbers}')
+index_num = input('--> ').split()
+res_mult = 1
+for item in index_num:
+    res_mult *= numbers[int(item)]
 print(res_mult)
